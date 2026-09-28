@@ -1,0 +1,83 @@
+{
+  "candidate": "03_build/v003/schietwetter_umbrella_keychain_v003_candidate.3mf",
+  "sha256": "0a39d26b7071994f7aab816c04be3af6bcd431f82244e20134415af226ff0b8b",
+  "short_id": "0A39D26B",
+  "unit": "millimeter",
+  "bounds_mm": [
+    45,
+    57.51729965209961,
+    12.347374439239502
+  ],
+  "body_names": [
+    "umbrella_body",
+    "schietwetter_text_01_S",
+    "schietwetter_text_02_c",
+    "schietwetter_text_03_h",
+    "schietwetter_text_04_i",
+    "schietwetter_text_05_e",
+    "schietwetter_text_06_t",
+    "schietwetter_text_07_w",
+    "schietwetter_text_08_e",
+    "schietwetter_text_09_t",
+    "schietwetter_text_10_t",
+    "schietwetter_text_11_e",
+    "schietwetter_text_12_r",
+    "hamburg_mark"
+  ],
+  "colors": {
+    "umbrella_body": "#29485F",
+    "schietwetter_text_01_S": "#F2E6C9",
+    "schietwetter_text_02_c": "#F2E6C9",
+    "schietwetter_text_03_h": "#F2E6C9",
+    "schietwetter_text_04_i": "#F2E6C9",
+    "schietwetter_text_05_e": "#F2E6C9",
+    "schietwetter_text_06_t": "#F2E6C9",
+    "schietwetter_text_07_w": "#F2E6C9",
+    "schietwetter_text_08_e": "#F2E6C9",
+    "schietwetter_text_09_t": "#F2E6C9",
+    "schietwetter_text_10_t": "#F2E6C9",
+    "schietwetter_text_11_e": "#F2E6C9",
+    "schietwetter_text_12_r": "#F2E6C9",
+    "hamburg_mark": "#C44A3D"
+  },
+  "watertight": "all 14 bodies VERIFIED true",
+  "connected_components": "all 14 bodies VERIFIED exactly 1",
+  "winding_consistent": "all 14 bodies VERIFIED true",
+  "degenerate_faces": "all 14 bodies VERIFIED false",
+  "measurements": {
+    "overall_xyz_mm": [
+      45,
+      57.51729965209961,
+      12.347374439239502
+    ],
+    "umbrella_body_x_mm": 45,
+    "umbrella_body_depth_z_mm": 12.275650024414062,
+    "loop_hole_estimated_mm": 4.200938216666084,
+    "body_count": 14,
+    "flat_back": false,
+    "round_shaft_and_handle": true
+  },
+  "findings": [
+    {
+      "severity": "WARNING",
+      "code": "SUPPORT_RISK",
+      "message": "Full 3D canopy and round handle intentionally remove the flat back; expect support/orientation work in Anycubic Slicer Next."
+    },
+    {
+      "severity": "WARNING",
+      "code": "MIN_WALL_GLOBAL_NOT_VERIFIED",
+      "message": "Critical designed features meet targets, but full mesh medial-wall scan is not available in this environment."
+    },
+    {
+      "severity": "WARNING",
+      "code": "SELF_INTERSECTION_GLOBAL_NOT_VERIFIED",
+      "message": "Reopened meshes are watertight/consistent; dedicated global self-intersection scan is not available."
+    }
+  ],
+  "checks": {
+    "package_roundtrip": "VERIFIED",
+    "candidate_reopened": "VERIFIED",
+    "self_intersections": "NOT_VERIFIED",
+    "minimum_wall_thickness_global": "NOT_VERIFIED"
+  }
+}

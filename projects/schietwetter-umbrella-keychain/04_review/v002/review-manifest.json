@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "model": "schietwetter_umbrella_keychain",
+  "version": "v002",
+  "candidate_id": "88216554",
+  "candidate_sha256": "88216554808f8d4c635b3b6e22fdffd38861329d0d047ec7664f0290de5b3a5d",
+  "geometry_source": "reopened candidate 3MF",
+  "previews": [
+    "schietwetter_umbrella_keychain_v002_front.png",
+    "schietwetter_umbrella_keychain_v002_back.png",
+    "schietwetter_umbrella_keychain_v002_side.png",
+    "schietwetter_umbrella_keychain_v002_top.png",
+    "schietwetter_umbrella_keychain_v002_isometric.png",
+    "schietwetter_umbrella_keychain_v002_dimensions.png",
+    "schietwetter_umbrella_keychain_v002_parts-colors.png",
+    "schietwetter_umbrella_keychain_v002_proof-sheet.png"
+  ],
+  "qa": "schietwetter_umbrella_keychain_v002_qa.md",
+  "blockers": 0,
+  "warnings": 2
+}

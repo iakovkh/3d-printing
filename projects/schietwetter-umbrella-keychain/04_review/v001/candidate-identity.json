@@ -1,0 +1,10 @@
+{
+  "model": "schietwetter_umbrella_keychain",
+  "version": "v001",
+  "candidate_filename": "schietwetter_umbrella_keychain_v001_candidate.3mf",
+  "sha256": "620914271cae8ecd6ef803721fc31b83198ae7f6e106198e50a3ddee09aa8f57",
+  "short_id": "62091427",
+  "size_bytes": 171281,
+  "bounds_mm": [45.0436, 5.74663, 56.6411],
+  "body_count": 7
+}

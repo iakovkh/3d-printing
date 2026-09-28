@@ -1,0 +1,21 @@
+{
+  "model": "schietwetter_umbrella_keychain",
+  "version": "v001",
+  "candidate": {
+    "filename": "schietwetter_umbrella_keychain_v001_candidate.3mf",
+    "sha256": "620914271cae8ecd6ef803721fc31b83198ae7f6e106198e50a3ddee09aa8f57",
+    "short_id": "62091427"
+  },
+  "proof_geometry_source": "reopened candidate 3MF",
+  "preview_sha256": {
+    "front": "17d8c972bae9c580181fd5d7ab0dab404d5bd74668941e3373ded7c6259957a7",
+    "back": "31d1d9653c27d8aeed3c2376b5c0a734d54450bfa0bd0c946c2df9d7552c2dca",
+    "side": "80a2ff144a8d9aec3e38d8198dd25770512bae88d8acee6682525ef5d853b510",
+    "top": "f84f45721410206f3db65de7716e72bfb7404556d2d6b2aa46e54323cc02b75b",
+    "isometric": "4b06e53d9106b1374f1c64a1f22ab26a6bc5e732455c9f622f49b21331e59d40",
+    "dimensions": "00435f5ea308de761db201af52f1b78d36864709d2a452c218839e334d88c38c",
+    "parts-colors": "c7cb1562e365811aa58f3c631b2de38756254f573af4888b3b861a8831e44057",
+    "proof-sheet": "2c47979b88e766b599df5419cf0a87fff021f2e8d9e1a2595d6924adfda366fe"
+  },
+  "status": "READY_FOR_REVIEW"
+}

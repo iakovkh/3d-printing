@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "slug": "schietwetter-umbrella-keychain",
+  "classification": "HYBRID",
+  "status": "GEOMETRY_DRAFT",
+  "critical_questions_open": false,
+  "concept_required": true,
+  "current_version": "v004",
+  "requirements_approval": {
+    "user_text": "Да, сделай так, чтобы получилось красиво... я согласен отказаться от мелких деталей.",
+    "recorded_at": "2026-09-28T20:01:00+00:00"
+  },
+  "concept_approval": {
+    "user_text": "Да, крутой концепт... я согласен отказаться от мелких деталей.",
+    "recorded_at": "2026-09-28T20:01:00+00:00"
+  },
+  "history": [
+    {
+      "from": "INTAKE",
+      "to": "WAITING_FOR_INPUT",
+      "evidence": "Initial keychain brief captured; blocking choices remained.",
+      "recorded_at": "2026-09-28T19:55:00+00:00"
+    },
+    {
+      "from": "WAITING_FOR_INPUT",
+      "to": "READY_TO_MODEL",
+      "evidence": "User approved 45 mm size, top loop, tourist style, multi-color body structure and simplification of fine details.",
+      "recorded_at": "2026-09-28T20:01:00+00:00"
+    },
+    {
+      "from": "READY_TO_MODEL",
+      "to": "GEOMETRY_DRAFT",
+      "evidence": "Requirements and concept approved; start v001 canonical geometry.",
+      "recorded_at": "2026-09-28T20:05:00+00:00"
+    },
+    {
+      "from": "GEOMETRY_DRAFT",
+      "to": "READY_FOR_REVIEW",
+      "evidence": "v001 candidate 3MF reopened independently; geometric QA completed with no BLOCKER; candidate ID 62091427; technical proof views rendered only from reopened candidate geometry.",
+      "recorded_at": "2026-09-28T20:30:00+00:00"
+    },
+    {
+      "from": "READY_FOR_REVIEW",
+      "to": "GEOMETRY_DRAFT",
+      "evidence": "v001 kept immutable. Started v002 after visual cleanup and print-orientation improvements; added full flat canopy backplate and simplified printable decorative geometry.",
+      "recorded_at": "2026-09-28T21:20:00+00:00"
+    },
+    {
+      "from": "GEOMETRY_DRAFT",
+      "to": "READY_FOR_REVIEW",
+      "evidence": "v002 candidate reopened independently; watertight/single-component QA passed with no BLOCKER; candidate ID 88216554; proof views generated only from reopened candidate geometry.",
+      "recorded_at": "2026-09-28T21:31:00+00:00"
+    },
+    {
+      "from": "READY_FOR_REVIEW",
+      "to": "GEOMETRY_DRAFT",
+      "evidence": "User rejected v002 as too flat and explicitly required a true 3D umbrella. v002 remains immutable; started v003 with rounded back, round shaft/handle and no flat backplate.",
+      "recorded_at": "2026-09-28T21:45:00+00:00"
+    },
+    {
+      "from": "GEOMETRY_DRAFT",
+      "to": "READY_FOR_REVIEW",
+      "evidence": "v003 candidate reopened independently; full 3D depth 12.347 mm; all 14 bodies watertight, single-component and winding-consistent; no BLOCKER; candidate ID 0A39D26B; proof views generated only from reopened candidate geometry.",
+      "recorded_at": "2026-09-28T22:07:00+00:00"
+    },
+    {
+      "from": "READY_FOR_REVIEW",
+      "to": "GEOMETRY_DRAFT",
+      "evidence": "User rejected v003 on visual quality. v001-v003 remain immutable and rejected. v004 image-to-3D feasibility attempt failed before geometry generation; no v004 candidate exists. Manual Blender modeling specification and acceptance gate created; next real candidate will start at v005.",
+      "recorded_at": "2026-09-29T00:20:00+02:00"
+    }
+  ]
+}
