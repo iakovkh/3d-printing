@@ -65,6 +65,10 @@ class RepositoryLayoutTest(unittest.TestCase):
         for link in links:
             self.assertTrue((ROOT / link).is_file(), link)
 
+    def test_readme_shows_the_exact_machine_accepted_approval_sentence(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("Утверждаю <model> v003, ID 8F21C4A9.", readme)
+
 
 if __name__ == "__main__":
     unittest.main()
