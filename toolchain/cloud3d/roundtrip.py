@@ -20,7 +20,7 @@ class RoundTripReport:
     transforms: dict[str, Transform]
     colors: dict[str, str]
     extents_mm: tuple[float, float, float]
-    body_volumes_mm3: dict[str, float]
+    body_volumes_mm3: dict[str, float | None]
     reopened_bodies: dict[str, pathlib.Path]
 
 
@@ -56,14 +56,14 @@ def reopen_candidate(candidate: pathlib.Path, output_dir: pathlib.Path) -> Round
             f"reopened body count {len(scene.geometry)} != package count {package.object_count}"
         )
     reopened: dict[str, pathlib.Path] = {}
-    volumes: dict[str, float] = {}
+    volumes: dict[str, float | None] = {}
     world_meshes: list[trimesh.Trimesh] = []
     for index, name in enumerate(package.body_names):
         mesh = _geometry_for_body(scene, package, name, index)
         destination = output_dir / f"reopened_{_safe_name(name)}.stl"
         destination.write_bytes(mesh.export(file_type="stl"))
         reopened[name] = destination.resolve()
-        volumes[name] = abs(float(mesh.volume))
+        volumes[name] = abs(float(mesh.volume)) if mesh.is_watertight else None
         world_meshes.append(mesh)
     bounds = np.vstack([mesh.bounds for mesh in world_meshes])
     extents = bounds.max(axis=0) - bounds.min(axis=0)
@@ -77,4 +77,3 @@ def reopen_candidate(candidate: pathlib.Path, output_dir: pathlib.Path) -> Round
         body_volumes_mm3=volumes,
         reopened_bodies=reopened,
     )
-
