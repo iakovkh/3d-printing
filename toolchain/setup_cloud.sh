@@ -38,4 +38,3 @@ fi
 
 CLOUD3D_BLENDER="$venv_dir/bin/blender" \
   "$venv_dir/bin/python" "$repo_root/toolchain/verify_toolchain.py" --repo-root "$repo_root"
-

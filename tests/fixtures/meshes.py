@@ -10,4 +10,3 @@ def write_box_stl(path: pathlib.Path, extents: tuple[float, float, float]) -> pa
     mesh.apply_translation((0.0, 0.0, extents[2] / 2.0))
     path.write_bytes(mesh.export(file_type="stl"))
     return path
-

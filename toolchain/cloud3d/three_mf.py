@@ -135,7 +135,6 @@ def _add_material_colors(payload: bytes, bodies: tuple[BodyInput, ...]) -> bytes
     members["3D/3dmodel.model"] = ET.tostring(
         root, encoding="utf-8", xml_declaration=True
     )
-
     destination = io.BytesIO()
     with zipfile.ZipFile(
         destination, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=5
@@ -255,4 +254,3 @@ def inspect_package(path: pathlib.Path) -> PackageReport:
         transforms=transforms,
         colors=colors,
     )
-

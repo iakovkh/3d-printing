@@ -217,4 +217,3 @@ def verify_preview_traceability(
                 actual = image.info.get(key)
                 if actual != value:
                     raise ValueError(f"{path.name} {key}={actual!r}, expected {value!r}")
-
