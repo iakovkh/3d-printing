@@ -142,6 +142,8 @@ class WorkflowDefinitionTest(unittest.TestCase):
             )
             self.assertIn("actions/checkout@v7", text, name)
             self.assertIn("actions/setup-python@v7", text, name)
+            self.assertIn("runs-on: ubuntu-24.04", text, name)
+            self.assertNotIn("runs-on: ubuntu-latest", text, name)
 
     def test_smoke_finds_blender_symlink_created_by_setup_script(self):
         with tempfile.TemporaryDirectory() as temporary:
