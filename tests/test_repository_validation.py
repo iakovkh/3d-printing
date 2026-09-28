@@ -12,7 +12,7 @@ from PIL import Image
 
 from tests.test_release_gate import review_fixture
 from toolchain.cloud3d.repository import validate_repository
-from toolchain.run_smoke_test import run_smoke
+from toolchain.run_smoke_test import _find_blender, run_smoke
 
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -135,6 +135,14 @@ class RepositoryValidationTest(unittest.TestCase):
 
 
 class WorkflowDefinitionTest(unittest.TestCase):
+    def test_smoke_finds_blender_symlink_created_by_setup_script(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = pathlib.Path(temporary)
+            installed = root / ".venv" / "bin" / "blender"
+            installed.parent.mkdir(parents=True)
+            installed.write_bytes(b"fixture")
+            self.assertEqual(_find_blender(root, environ={}, which=lambda _: None), str(installed))
+
     def test_contract_workflow_exposes_required_status_and_validator(self):
         text = (REPO_ROOT / ".github" / "workflows" / "contract.yml").read_text(
             encoding="utf-8"

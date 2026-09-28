@@ -8,7 +8,7 @@ import os
 import pathlib
 import shutil
 import subprocess
-from collections.abc import Callable
+from collections.abc import Callable, Mapping
 
 from cadquery import exporters
 
@@ -35,12 +35,26 @@ IDENTITY = (
 )
 
 
+def _find_blender(
+    repo_root: pathlib.Path,
+    *,
+    environ: Mapping[str, str] | None = None,
+    which: Callable[[str], str | None] = shutil.which,
+) -> str | None:
+    environment = os.environ if environ is None else environ
+    candidates = (
+        environment.get("CLOUD3D_BLENDER"),
+        str(repo_root / ".venv" / "bin" / "blender"),
+        str(repo_root / ".venv" / "Scripts" / "blender.exe"),
+        which("blender"),
+        str(repo_root / "tools" / "blender-5.2.1-windows-x64" / "blender.exe"),
+    )
+    return next((candidate for candidate in candidates if candidate and pathlib.Path(candidate).is_file()), None)
+
+
 def _blender_renderer(manifest: pathlib.Path, output: pathlib.Path) -> None:
     repo_root = pathlib.Path(__file__).resolve().parents[1]
-    executable = os.environ.get("CLOUD3D_BLENDER") or shutil.which("blender")
-    local = repo_root / "tools" / "blender-5.2.1-windows-x64" / "blender.exe"
-    if executable is None and local.is_file():
-        executable = str(local)
+    executable = _find_blender(repo_root)
     if executable is None:
         raise RuntimeError("Blender 5.2.1 is required for the smoke render")
     completed = subprocess.run(
