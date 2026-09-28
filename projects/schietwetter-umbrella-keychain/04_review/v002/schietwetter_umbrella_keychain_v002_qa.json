@@ -1,0 +1,59 @@
+{
+  "candidate": "03_build/v002/schietwetter_umbrella_keychain_v002_candidate.3mf",
+  "sha256": "88216554808f8d4c635b3b6e22fdffd38861329d0d047ec7664f0290de5b3a5d",
+  "short_id": "88216554",
+  "unit": "millimeter",
+  "bounds_mm": [45.0, 58.04264450073242, 6.855577707290649],
+  "body_names": ["umbrella_body","text_and_simple_decor","hamburg_mark"],
+  "colors": {
+    "umbrella_body": "#29485F",
+    "text_and_simple_decor": "#F2E6C9",
+    "hamburg_mark": "#C44A3D"
+  },
+  "watertight": {
+    "umbrella_body": true,
+    "text_and_simple_decor": true,
+    "hamburg_mark": true
+  },
+  "connected_components": {
+    "umbrella_body": 1,
+    "text_and_simple_decor": 1,
+    "hamburg_mark": 1
+  },
+  "winding_consistent": {
+    "umbrella_body": true,
+    "text_and_simple_decor": true,
+    "hamburg_mark": true
+  },
+  "degenerate_faces": {
+    "umbrella_body": false,
+    "text_and_simple_decor": false,
+    "hamburg_mark": false
+  },
+  "measurements": {
+    "overall_xyz_mm": [45.0,58.04264450073242,6.855577707290649],
+    "umbrella_body_x_mm": 45.0,
+    "loop_hole_estimated_mm": 4.199999934297755,
+    "back_plane_z_mm": -2.200000047683716,
+    "main_body_z_mm": 6.855577707290649,
+    "body_count": 3
+  },
+  "findings": [
+    {
+      "severity":"WARNING",
+      "code":"MIN_WALL_GLOBAL_NOT_VERIFIED",
+      "message":"Critical designed features meet targets, but full mesh medial-wall scan is not available in this environment."
+    },
+    {
+      "severity":"WARNING",
+      "code":"SELF_INTERSECTION_GLOBAL_NOT_VERIFIED",
+      "message":"Reopened meshes are watertight/consistent; dedicated global self-intersection scan is not available."
+    }
+  ],
+  "checks": {
+    "package_roundtrip":"VERIFIED",
+    "candidate_reopened":"VERIFIED",
+    "self_intersections":"NOT_VERIFIED",
+    "minimum_wall_thickness_global":"NOT_VERIFIED"
+  }
+}
