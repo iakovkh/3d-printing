@@ -2,10 +2,10 @@
   "schema_version": 1,
   "slug": "schietwetter-umbrella-keychain",
   "classification": "HYBRID",
-  "status": "READY_TO_MODEL",
+  "status": "GEOMETRY_DRAFT",
   "critical_questions_open": false,
   "concept_required": true,
-  "current_version": null,
+  "current_version": "v001",
   "requirements_approval": {
     "user_text": "Да, сделай так, чтобы получилось красиво... я согласен отказаться от мелких деталей.",
     "recorded_at": "2026-09-28T20:01:00+00:00"
@@ -26,6 +26,12 @@
       "to": "READY_TO_MODEL",
       "evidence": "User approved 45 mm size, top loop, tourist style, multi-color body structure and simplification of fine details.",
       "recorded_at": "2026-09-28T20:01:00+00:00"
+    },
+    {
+      "from": "READY_TO_MODEL",
+      "to": "GEOMETRY_DRAFT",
+      "evidence": "Requirements and concept approved; start v001 canonical geometry.",
+      "recorded_at": "2026-09-28T20:05:00+00:00"
     }
   ]
 }
