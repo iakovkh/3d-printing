@@ -2,10 +2,10 @@
   "schema_version": 1,
   "slug": "schietwetter-umbrella-keychain",
   "classification": "HYBRID",
-  "status": "READY_FOR_REVIEW",
+  "status": "GEOMETRY_DRAFT",
   "critical_questions_open": false,
   "concept_required": true,
-  "current_version": "v003",
+  "current_version": "v004",
   "requirements_approval": {
     "user_text": "Да, сделай так, чтобы получилось красиво... я согласен отказаться от мелких деталей.",
     "recorded_at": "2026-09-28T20:01:00+00:00"
@@ -62,6 +62,12 @@
       "to": "READY_FOR_REVIEW",
       "evidence": "v003 candidate reopened independently; full 3D depth 12.347 mm; all 14 bodies watertight, single-component and winding-consistent; no BLOCKER; candidate ID 0A39D26B; proof views generated only from reopened candidate geometry.",
       "recorded_at": "2026-09-28T22:07:00+00:00"
+    },
+    {
+      "from": "READY_FOR_REVIEW",
+      "to": "GEOMETRY_DRAFT",
+      "evidence": "User rejected v003 on visual quality. v001-v003 remain immutable and rejected. v004 image-to-3D feasibility attempt failed before geometry generation; no v004 candidate exists. Manual Blender modeling specification and acceptance gate created; next real candidate will start at v005.",
+      "recorded_at": "2026-09-29T00:20:00+02:00"
     }
   ]
 }
