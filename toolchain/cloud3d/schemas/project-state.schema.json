@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iakovkh/3d-printing/schemas/project-state.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "slug",
+    "classification",
+    "status",
+    "critical_questions_open",
+    "concept_required",
+    "current_version",
+    "requirements_approval",
+    "concept_approval",
+    "history"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "classification": {"type": ["string", "null"], "enum": ["FUNCTIONAL", "ORGANIC", "HYBRID", null]},
+    "status": {"enum": ["INTAKE", "WAITING_FOR_INPUT", "READY_TO_MODEL", "GEOMETRY_DRAFT", "READY_FOR_REVIEW", "APPROVED", "RELEASED"]},
+    "critical_questions_open": {"type": "boolean"},
+    "concept_required": {"type": "boolean"},
+    "current_version": {"type": ["string", "null"], "pattern": "^v[0-9]{3}$"},
+    "requirements_approval": {"type": ["object", "null"]},
+    "concept_approval": {"type": ["object", "null"]},
+    "history": {"type": "array"}
+  },
+  "additionalProperties": false
+}
+

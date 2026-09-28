@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "slug": "__PROJECT_SLUG__",
+  "classification": null,
+  "status": "INTAKE",
+  "critical_questions_open": true,
+  "concept_required": false,
+  "current_version": null,
+  "requirements_approval": null,
+  "concept_approval": null,
+  "history": []
+}
+
