@@ -1,0 +1,12 @@
+{
+  "blender": "5.2.1 LTS",
+  "blender_distribution": "official portable windows-x64",
+  "blender_archive_sha256": "0E631DAD7D0CAD6D5D18ABDD2E2550F6C0213215334EDA00DDBD3D22B96ECB2C",
+  "python": "3.12",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "trimesh": "5.1.0",
+  "lxml": "6.1.3",
+  "pillow": "12.2.0",
+  "networkx": "3.6.1"
+}

@@ -25,3 +25,14 @@ Thumbs.db
 .pytest_cache/
 .coverage
 
+# Preserved local migration evidence and superseded project intermediates
+/projects/skull-egg-cup/_migration_quarantine/
+/projects/skull-egg-cup/03_build/v001/draft*/
+/projects/skull-egg-cup/03_build/v001/reference_draft*/
+/projects/skull-egg-cup/03_build/v001/reference_preview*.blend
+/projects/skull-egg-cup/03_build/v001/anatomical_no_core_test.blend
+/projects/skull-egg-cup/03_build/v001/failed_candidate*.3mf
+/projects/skull-egg-cup/03_build/v001/*_core*.blend
+/projects/skull-egg-cup/03_build/v001/*_source_anatomical*.blend
+/projects/skull-egg-cup/03_build/v001/*_source_refined*.blend
+/projects/*/04_review/v*/reopened_*.stl

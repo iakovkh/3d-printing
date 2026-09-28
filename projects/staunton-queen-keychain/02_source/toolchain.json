@@ -1,0 +1,15 @@
+{
+  "blender": "Blender 5.2.1 LTS",
+  "blender_path": "managed by toolchain/setup_cloud.sh (CLOUD3D_BLENDER)",
+  "python": "3.12.14",
+  "runtime_python_path": ".venv/bin/python",
+  "vendor_path": null,
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "trimesh": "5.1.0",
+    "lxml": "6.1.3",
+    "pillow": "12.2.0",
+    "networkx": "3.6.1"
+  }
+}

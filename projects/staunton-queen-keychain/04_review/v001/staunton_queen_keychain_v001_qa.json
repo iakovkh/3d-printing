@@ -1,0 +1,29 @@
+{
+  "base_diameter_mm": 22.5,
+  "base_plane_error_mm": 0.0,
+  "blockers": [
+    "could not identify the ring hole in reopened geometry: expected inner and outer section rings, got medians [3.9976258174076023]"
+  ],
+  "body_count": 1,
+  "bounds_mm": [
+    22.5,
+    22.5,
+    50.0
+  ],
+  "connected_component_count": 1,
+  "crown_peak_count": 8,
+  "degenerate_face_count": 0,
+  "euler_number": 2,
+  "finial_outer_diameter_mm": 0.0,
+  "hole_diameter_mm": 0.0,
+  "minimum_hole_ligament_mm": 0.0,
+  "sha256": "e6324a026169c36e19f9691c8237c4fc7611b26070420a0122a24adbd5e2844e",
+  "short_id": "E6324A02",
+  "warnings": [
+    "Horizontal 3.2 mm bore creates a short bridge; inspect the sliced roof and add local support only if needed",
+    "Crown valleys and tooth undersides may create local overhangs; inspect layers in Anycubic Slicer Next",
+    "Slicer profile, seam, material flow, print time, and support placement are not validated by geometry QA"
+  ],
+  "watertight": true,
+  "winding_consistent": true
+}

@@ -1,0 +1,26 @@
+{
+  "base_plane_error_mm": 0.0,
+  "blockers": [],
+  "body_count": 1,
+  "bounds_mm": [
+    77.9524,
+    87.9156,
+    74.0
+  ],
+  "cavity_depth_mm": 22.0,
+  "connected_component_count": 1,
+  "degenerate_face_count": 0,
+  "euler_number": -46,
+  "minimum_wall_mm": 4.523,
+  "opening_diameter_mm": 41.9879,
+  "sha256": "1c8bb4862b0d15b6e86022b353e9049e50a7d7c0389344515c8e35c3aa919d06",
+  "short_id": "1C8BB486",
+  "warnings": [
+    "PLA temperature risk accepted by user",
+    "Anatomical undercuts and dental detail may require slicer supports",
+    "Hand wash only; geometry file contains no validated food-contact or dishwasher certification",
+    "Intentional anatomical passages yield Euler number -46 (genus 24); accepted because the mesh is one connected watertight manifold"
+  ],
+  "watertight": true,
+  "winding_consistent": true
+}

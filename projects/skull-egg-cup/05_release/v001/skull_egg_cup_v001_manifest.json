@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "model": "skull_egg_cup",
+  "version": "v001",
+  "release_date": "2026-09-17",
+  "status": "RELEASED",
+  "candidate_id": "1C8BB486",
+  "candidate_sha256": "1c8bb4862b0d15b6e86022b353e9049e50a7d7c0389344515c8e35c3aa919d06",
+  "approval": {
+    "status": "APPROVED",
+    "user_text": "Тогда утверждаем модель.",
+    "resolved_candidate": "skull_egg_cup v001, ID 1C8BB486"
+  },
+  "geometry": {
+    "units": "millimeter",
+    "bounds_mm": [77.9524, 87.9156, 74.0],
+    "body_count": 1,
+    "triangle_count": 650104,
+    "watertight": true,
+    "winding_consistent": true,
+    "opening_diameter_mm": 41.9879,
+    "cavity_depth_mm": 22.0,
+    "minimum_functional_wall_mm": 4.523
+  },
+  "printing": {
+    "printer": "Anycubic Kobra S1 Combo",
+    "slicer": "Anycubic Slicer Next",
+    "material": "standard PLA",
+    "nozzle_mm": 0.4,
+    "orientation": "upright on integrated flat base",
+    "supports_required": true,
+    "support_type": "tree/organic auto",
+    "support_interface_required": true,
+    "slicer_profile_included": false
+  },
+  "parts": [
+    {
+      "name": "skull_egg_cup_body",
+      "color_role": "single_spool_color",
+      "transform": {
+        "translation_mm": [0, 0, 0],
+        "rotation_deg": [0, 0, 0],
+        "scale": [1, 1, 1]
+      }
+    }
+  ],
+  "toolchain": {
+    "blender": "5.2.1 LTS",
+    "python": "3.12",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "trimesh": "5.1.0",
+    "lxml": "6.1.3",
+    "pillow": "12.2.0",
+    "networkx": "3.6.1"
+  },
+  "files": [
+    {"path": "skull_egg_cup_v001_geometry.3mf", "sha256": "1c8bb4862b0d15b6e86022b353e9049e50a7d7c0389344515c8e35c3aa919d06", "bytes": 12050579},
+    {"path": "exchange/skull_egg_cup_v001_body.stl", "sha256": "dbb9bae5b1c54c88792023d903b458c52e8588139be792d3f8deca9895dde6db", "bytes": 32505284},
+    {"path": "skull_egg_cup_v001_requirements.md", "sha256": "0f52f5e15cd66308a670d3dbf5f71669090e083f9b63a015cb81d0443c7566c0", "bytes": 5230},
+    {"path": "skull_egg_cup_v001_qa.md", "sha256": "05790ec4165895fbea4f59e1e599b0144c31a89b1ce3210ab10a6e08713c2fb2", "bytes": 1685},
+    {"path": "skull_egg_cup_v001_qa.json", "sha256": "9b09fbbd4617a596870a2701fa487e8f77037fd918dff920a944774e080a655f", "bytes": 863},
+    {"path": "skull_egg_cup_v001_print-notes.md", "sha256": "7c556ccc71f153dc54be0de3d4ba20e82fc95962622f54373bc271042fc05b3b", "bytes": 3465},
+    {"path": "previews/skull_egg_cup_v001_back.png", "sha256": "ade15f8387392a1fd41d990f1c7b497d23161b3976443b6f9025d27268ec3928", "bytes": 443393},
+    {"path": "previews/skull_egg_cup_v001_dimensions.png", "sha256": "7907acaa20e89b153277864bcfc7f9589f15503435a19151c14e46c4c58700c3", "bytes": 307993},
+    {"path": "previews/skull_egg_cup_v001_front.png", "sha256": "bb363ea712efd677388c8e6294c7eae9af59725e0db3b511c1deda462d080cdd", "bytes": 490720},
+    {"path": "previews/skull_egg_cup_v001_isometric.png", "sha256": "f5e5b2f12f8985326e019e6ce8be906a397e45b7f45ea4a9498c6b12bd2521c2", "bytes": 487431},
+    {"path": "previews/skull_egg_cup_v001_parts-colors.png", "sha256": "cfcfc2615ae329f7981d0805ea9397d25c3ee6b614d88035743e623be154c61c", "bytes": 266865},
+    {"path": "previews/skull_egg_cup_v001_proof-sheet.png", "sha256": "1a2e792c1e288e99b9e6c398847ed8c0584d25cd07eba88ef354cba5a8e2dea6", "bytes": 2687681},
+    {"path": "previews/skull_egg_cup_v001_side.png", "sha256": "e0e989cf49a081ac1022b0ba1ad6dc41bae811d2908be9afb33af79d38094bc3", "bytes": 463681},
+    {"path": "previews/skull_egg_cup_v001_top.png", "sha256": "a3ea7596d5836804f551b2f7bfb8115d182fb759a1a99e9d0f37236ae9899346", "bytes": 436582},
+    {"path": "source/skull_egg_cup_v001_source.blend", "sha256": "9b9d362e2ff0fccd353465bc2a51d6cd5c5e1449fb89610bc85b38f47ab8dac8", "bytes": 12140259},
+    {"path": "source/source-manifest.json", "sha256": "6034b774da3395b4ef870df37d6537076f4b7b9b6d03fb683b066abbf9467792", "bytes": 923},
+    {"path": "source/toolchain.json", "sha256": "2e473f026e289eb862b88e1cd385b910db81f47b88a4cd451b9ef1357a173c05", "bytes": 331},
+    {"path": "source/blender/build_anatomical_source.py", "sha256": "e9699228e1951b0e66b3cf7e6ca9768957133834cfd6e2da5068a3c7cad60b65", "bytes": 9059},
+    {"path": "source/blender/geometry_core.py", "sha256": "d437758a3a7f2116786cc902981ba8789c302795136920141eb1c67a12ff7126", "bytes": 7690},
+    {"path": "source/blender/model_config.py", "sha256": "3cee14de199c7c366a6676c6f8451d7d841f30446b2d1b26433c262f9c58fff5", "bytes": 551},
+    {"path": "source/references/ATTRIBUTION.md", "sha256": "e3987c39377b226f5ef6247c8d75f0a9e65780afc805430ef8dde7f4b5e87427", "bytes": 809},
+    {"path": "source/references/human_skull_cc-by-4.0.stl", "sha256": "d44fe197ce4724d6fdf9729701c723efb79ccf14a1ccb3ad37475fbfe1b5066d", "bytes": 1550884}
+  ]
+}

@@ -108,6 +108,46 @@ def _validate_lifecycle(project: pathlib.Path, findings: list[ValidationFinding]
             )
 
 
+def _validate_migration(project: pathlib.Path, findings: list[ValidationFinding]) -> None:
+    manifest_path = project / "migration-manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("schema_version") != 1 or manifest.get("project") != project.name:
+        _block(findings, "INVALID_MIGRATION_MANIFEST", "migration identity is invalid", manifest_path)
+        return
+    if manifest.get("recorded_status") not in {"READY_FOR_REVIEW", "RELEASED"}:
+        _block(findings, "INVALID_MIGRATION_STATUS", "unsupported migrated status", manifest_path)
+    included = manifest.get("included_paths")
+    hashes = manifest.get("binary_sha256")
+    if not isinstance(included, list) or not isinstance(hashes, dict):
+        _block(findings, "INVALID_MIGRATION_MANIFEST", "selection or hashes are missing", manifest_path)
+        return
+    for relative in included:
+        path = project / relative
+        try:
+            path.resolve().relative_to(project.resolve())
+        except ValueError:
+            _block(findings, "MIGRATION_PATH_ESCAPE", f"path escapes project: {relative}", manifest_path)
+            continue
+        if not path.is_file():
+            _block(findings, "MIGRATION_FILE_MISSING", f"selected file is missing: {relative}", path)
+    for relative, expected in hashes.items():
+        path = project / relative
+        if path.is_file() and _digest(path) != expected:
+            _block(
+                findings,
+                "MIGRATION_HASH_MISMATCH",
+                f"migrated binary differs from recorded hash: {relative}",
+                path,
+            )
+    if manifest.get("recorded_status") == "RELEASED" and not manifest.get("approval_evidence"):
+        _block(findings, "MIGRATED_RELEASE_WITHOUT_APPROVAL", "released migration lacks approval evidence", manifest_path)
+    if manifest.get("recorded_status") == "READY_FOR_REVIEW" and any(
+        (project / relative).suffix.lower() == ".3mf" and "/05_release/" in f"/{relative}"
+        for relative in included
+    ):
+        _block(findings, "FABRICATED_MIGRATED_RELEASE", "non-release migration includes release geometry", manifest_path)
+
+
 def _immutable_diff(repo_root: pathlib.Path, base_ref: str, findings: list[ValidationFinding]):
     completed = subprocess.run(
         ["git", "diff", "--name-status", f"{base_ref}...HEAD", "--", "projects"],
@@ -147,6 +187,11 @@ def validate_repository(
                     _validate_lifecycle(project, findings)
                 except Exception as error:
                     _block(findings, "PROJECT_VALIDATION_ERROR", str(error), project)
+            elif (project / "migration-manifest.json").is_file():
+                try:
+                    _validate_migration(project, findings)
+                except Exception as error:
+                    _block(findings, "MIGRATION_VALIDATION_ERROR", str(error), project)
     if base_ref:
         _immutable_diff(repo_root, base_ref, findings)
     return ValidationReport(tuple(findings))

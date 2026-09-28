@@ -93,6 +93,28 @@ class RepositoryValidationTest(unittest.TestCase):
             report = validate_repository(root, base_ref=base)
             self.assertIn("IMMUTABLE_ARTIFACT_CHANGED", codes(report))
 
+    def test_rejects_migrated_binary_that_differs_from_recorded_hash(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = pathlib.Path(temporary)
+            project = root / "projects" / "legacy"
+            project.mkdir(parents=True)
+            binary = project / "legacy_v001_candidate.3mf"
+            binary.write_bytes(b"actual")
+            (project / "migration-manifest.json").write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "project": "legacy",
+                        "recorded_status": "READY_FOR_REVIEW",
+                        "approval_evidence": None,
+                        "included_paths": [binary.name],
+                        "binary_sha256": {binary.name: "0" * 64},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            self.assertIn("MIGRATION_HASH_MISMATCH", codes(validate_repository(root)))
+
     def test_smoke_run_stops_at_ready_for_review_without_creating_release(self):
         def fake_renderer(manifest: pathlib.Path, output: pathlib.Path):
             data = json.loads(manifest.read_text(encoding="utf-8"))

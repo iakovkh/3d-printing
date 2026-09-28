@@ -6,3 +6,8 @@
 *.3mf -text
 *.png -text
 
+# Preserve imported historical prose byte-for-byte; its Markdown uses hard line breaks.
+docs/superpowers/plans/2026-09-*.md whitespace=-trailing-space,-blank-at-eof
+docs/superpowers/specs/2026-09-*.md whitespace=-trailing-space,-blank-at-eof
+projects/skull-egg-cup/** whitespace=-trailing-space,-blank-at-eof
+projects/staunton-queen-keychain/** whitespace=-trailing-space,-blank-at-eof
