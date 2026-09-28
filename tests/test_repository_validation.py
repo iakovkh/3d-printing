@@ -135,6 +135,14 @@ class RepositoryValidationTest(unittest.TestCase):
 
 
 class WorkflowDefinitionTest(unittest.TestCase):
+    def test_workflows_use_current_node24_action_majors(self):
+        for name in ("contract.yml", "cloud-smoke.yml"):
+            text = (REPO_ROOT / ".github" / "workflows" / name).read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("actions/checkout@v7", text, name)
+            self.assertIn("actions/setup-python@v7", text, name)
+
     def test_smoke_finds_blender_symlink_created_by_setup_script(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = pathlib.Path(temporary)
