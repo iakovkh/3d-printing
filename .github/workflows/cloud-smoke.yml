@@ -1,0 +1,30 @@
+name: Pinned cloud toolchain smoke
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "toolchain/**"
+      - "tests/fixtures/smoke_project/**"
+      - ".github/workflows/cloud-smoke.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  cloud-smoke:
+    name: cloud-smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install and verify pinned geometry toolchain
+        run: bash toolchain/setup_cloud.sh
+      - name: Build, reopen, QA and render an unapproved candidate
+        run: .venv/bin/python -m toolchain.run_smoke_test --output /tmp/cloud3d-smoke
+      - name: Assert the smoke run stopped before release
+        run: test ! -e /tmp/cloud3d-smoke/projects/cloud-smoke/05_release/v001

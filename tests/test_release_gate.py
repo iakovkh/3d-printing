@@ -14,7 +14,12 @@ from toolchain.cloud3d.project import create_project
 from toolchain.cloud3d.qa import run_generic_qa
 from toolchain.cloud3d.release import release_candidate, validate_release_gate
 from toolchain.cloud3d.roundtrip import reopen_candidate
-from toolchain.cloud3d.state import Status, advance_state, configure_requirements
+from toolchain.cloud3d.state import (
+    Status,
+    advance_state,
+    configure_requirements,
+    set_current_version,
+)
 from toolchain.cloud3d.three_mf import BodyInput, build_candidate
 
 
@@ -37,6 +42,7 @@ def review_fixture(root: pathlib.Path, *, blocker: bool = False):
     advance_state(project, Status.WAITING_FOR_INPUT, "requirements drafted")
     advance_state(project, Status.READY_TO_MODEL, "requirements approved")
     advance_state(project, Status.GEOMETRY_DRAFT, "modeling started")
+    set_current_version(project, "v001")
     build = project / "03_build" / "v001"
     build.mkdir()
     source = write_box_stl(build / "body.stl", (10.0, 20.0, 30.0))

@@ -7,6 +7,7 @@ import datetime as dt
 import enum
 import json
 import pathlib
+import re
 from typing import Any
 
 
@@ -175,5 +176,19 @@ def advance_state(
         requirements_approval=requirements_approval,
         history=(*state.history, entry),
     )
+    _write_state(project_dir, updated)
+    return updated
+
+
+def set_current_version(project_dir: pathlib.Path, version: str) -> ProjectState:
+    """Select the immutable version namespace used by the current geometry cycle."""
+    if re.fullmatch(r"v\d{3}", version) is None:
+        raise ValueError(f"invalid version: {version}")
+    state = load_state(project_dir)
+    if state.status != Status.GEOMETRY_DRAFT:
+        raise ValueError("current version can only be set during GEOMETRY_DRAFT")
+    if state.current_version is not None and version <= state.current_version:
+        raise ValueError("a replacement candidate must use a newer version")
+    updated = dataclasses.replace(state, current_version=version)
     _write_state(project_dir, updated)
     return updated

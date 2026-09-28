@@ -14,6 +14,7 @@ from toolchain.cloud3d.state import (
     configure_requirements,
     load_state,
     record_concept_approval,
+    set_current_version,
 )
 
 
@@ -145,6 +146,23 @@ class ProjectLifecycleTest(unittest.TestCase):
             raw = json.loads((project / "project-state.json").read_text(encoding="utf-8"))
             self.assertEqual(raw["schema_version"], 1)
             self.assertEqual(raw["slug"], "fixture")
+
+    def test_current_version_is_explicit_and_cannot_move_backwards(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            project = create_project(pathlib.Path(temporary), "fixture", "brief")
+            advance_state(project, Status.WAITING_FOR_INPUT, "brief structured")
+            configure_requirements(
+                project,
+                classification="FUNCTIONAL",
+                concept_required=False,
+                critical_questions_open=False,
+            )
+            advance_state(project, Status.READY_TO_MODEL, "requirements approved")
+            advance_state(project, Status.GEOMETRY_DRAFT, "begin geometry")
+            self.assertEqual(set_current_version(project, "v001").current_version, "v001")
+            self.assertEqual(set_current_version(project, "v002").current_version, "v002")
+            with self.assertRaisesRegex(ValueError, "newer"):
+                set_current_version(project, "v001")
 
 
 if __name__ == "__main__":
