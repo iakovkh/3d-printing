@@ -1,0 +1,44 @@
+{
+  "model": "schietwetter_umbrella_keychain",
+  "version": "v001",
+  "sha256": "620914271cae8ecd6ef803721fc31b83198ae7f6e106198e50a3ddee09aa8f57",
+  "short_id": "62091427",
+  "unit": "millimeter",
+  "bounds_mm": [45.04359817504883, 5.7466301918029785, 56.6411018371582],
+  "body_names": ["umbrella_body","schietwetter_text_01","schietwetter_text_02","schietwetter_text_03","schietwetter_text_04","schietwetter_text_05","hamburg_mark"],
+  "colors": {
+    "umbrella_body": "#173354",
+    "schietwetter_text_01": "#F4E5C4",
+    "schietwetter_text_02": "#F4E5C4",
+    "schietwetter_text_03": "#F4E5C4",
+    "schietwetter_text_04": "#F4E5C4",
+    "schietwetter_text_05": "#F4E5C4",
+    "hamburg_mark": "#C5231A"
+  },
+  "measurements": {
+    "canopy_perimeter_core_mm": 2.2,
+    "shaft_nominal_diameter_mm": 3.5,
+    "handle_nominal_diameter_mm": 3.7,
+    "loop_hole_mm": [4.099999904632568, 4.100000381469727],
+    "loop_radial_wall_mm": 2.05,
+    "flat_back_plane_y_mm": 1.0,
+    "text_nominal_front_depth_mm": 3.5,
+    "mark_nominal_front_depth_mm": 3.0
+  },
+  "checks": {
+    "package_roundtrip": "VERIFIED",
+    "units": "VERIFIED",
+    "minimum_wall_thickness": "VERIFIED_DESIGN_AND_REOPENED_CRITICALS",
+    "critical_hole": "VERIFIED_REOPENED_SECTION",
+    "flat_print_face": "VERIFIED_REOPENED_GEOMETRY",
+    "self_intersections": "NOT_FULLY_VERIFIED",
+    "print_orientation": "BACK_FACE_DOWN"
+  },
+  "findings": [
+    {"severity":"INFO","code":"SELF_INTERSECTION_LIMIT","message":"No independent exhaustive triangle-pair self-intersection engine was available; structural OpenSCAD CGAL export reported Simple=yes and reopened meshes are watertight/winding-consistent."},
+    {"severity":"INFO","code":"PRINT_ORIENTATION","message":"Lay the flat back on the build plate. In this orientation the loop hole is vertical and the domed front builds upward."},
+    {"severity":"INFO","code":"SUPPORTS","message":"Designed for back-face-down printing without routine supports; confirm layer preview in Anycubic Slicer Next."},
+    {"severity":"WARNING","code":"TEXT_DETAIL","message":"The 45 mm format makes Schietwetter the limiting detail. The wordmark is boldened by a 0.12 mm 2D offset, but verify the first sliced-layer preview for complete glyph strokes with the 0.4 mm nozzle."}
+  ],
+  "has_blocker": false
+}
