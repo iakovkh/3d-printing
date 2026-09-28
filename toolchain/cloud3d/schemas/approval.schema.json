@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/cloud3d/approval.schema.json",
+  "title": "Cloud 3D exact candidate approval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "model",
+    "version",
+    "short_id",
+    "sha256",
+    "user_text",
+    "recorded_at"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "model": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "pattern": "^v[0-9]{3}$"},
+    "short_id": {"type": "string", "pattern": "^[0-9A-F]{8}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "user_text": {"type": "string", "minLength": 1},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  }
+}

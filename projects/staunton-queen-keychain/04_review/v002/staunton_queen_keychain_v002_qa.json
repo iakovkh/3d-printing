@@ -1,0 +1,27 @@
+{
+  "base_diameter_mm": 22.5,
+  "base_plane_error_mm": 0.0,
+  "blockers": [],
+  "body_count": 1,
+  "bounds_mm": [
+    22.5,
+    22.5,
+    50.0
+  ],
+  "connected_component_count": 1,
+  "crown_peak_count": 8,
+  "degenerate_face_count": 0,
+  "euler_number": 0,
+  "finial_outer_diameter_mm": 7.9949,
+  "hole_diameter_mm": 3.238,
+  "minimum_hole_ligament_mm": 2.3785,
+  "sha256": "5a0e4cba3b65761146543595eae4cb6f04f70404a6de224c9eb116e39eaf8828",
+  "short_id": "5A0E4CBA",
+  "warnings": [
+    "Horizontal 3.2 mm bore creates a short bridge; inspect the sliced roof and add local support only if needed",
+    "Crown valleys and tooth undersides may create local overhangs; inspect layers in Anycubic Slicer Next",
+    "Slicer profile, seam, material flow, print time, and support placement are not validated by geometry QA"
+  ],
+  "watertight": true,
+  "winding_consistent": true
+}

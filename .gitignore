@@ -1,0 +1,38 @@
+# Local tool distributions and virtual environments
+/tools/
+/.venv/
+/venv/
+
+# Superpowers/browser scratch state
+/.superpowers/
+
+# Python caches and locally vendored wheels
+**/__pycache__/
+*.py[cod]
+**/vendor/
+
+# Blender recovery files
+*.blend1
+*.blend2
+*.blend@
+
+# Raw technical-render intermediates; labeled proof images remain tracked
+*_raw.png
+
+# Common local noise
+.DS_Store
+Thumbs.db
+.pytest_cache/
+.coverage
+
+# Preserved local migration evidence and superseded project intermediates
+/projects/skull-egg-cup/_migration_quarantine/
+/projects/skull-egg-cup/03_build/v001/draft*/
+/projects/skull-egg-cup/03_build/v001/reference_draft*/
+/projects/skull-egg-cup/03_build/v001/reference_preview*.blend
+/projects/skull-egg-cup/03_build/v001/anatomical_no_core_test.blend
+/projects/skull-egg-cup/03_build/v001/failed_candidate*.3mf
+/projects/skull-egg-cup/03_build/v001/*_core*.blend
+/projects/skull-egg-cup/03_build/v001/*_source_anatomical*.blend
+/projects/skull-egg-cup/03_build/v001/*_source_refined*.blend
+/projects/*/04_review/v*/reopened_*.stl

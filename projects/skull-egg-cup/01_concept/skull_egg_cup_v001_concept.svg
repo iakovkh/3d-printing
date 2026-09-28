@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Концепт монолитной кокотницы в форме черепа</title>
+  <desc id="desc">Выбранное направление B. Схематический вид спереди с яйцом стандартного размера.</desc>
+  <rect width="900" height="700" fill="#75695e"/>
+  <rect x="30" y="28" width="840" height="80" rx="10" fill="#3a2d23"/>
+  <text x="450" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#fffaf0">КОНЦЕПТ — НЕ РЕНДЕР 3D-МОДЕЛИ</text>
+  <text x="450" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#f1dcc8">Направление B · монолитный детализированный череп</text>
+
+  <ellipse cx="450" cy="646" rx="260" ry="28" fill="#332b27" opacity="0.75"/>
+  <path d="M255 340 Q260 158 450 122 Q640 158 645 340 L612 505 Q580 605 510 630 H390 Q320 605 288 505Z" fill="#ddd0b7" stroke="#3a2d23" stroke-width="10"/>
+
+  <ellipse cx="450" cy="218" rx="94" ry="105" fill="#fffaf0" stroke="#c9732d" stroke-width="11"/>
+  <ellipse cx="450" cy="286" rx="108" ry="34" fill="none" stroke="#c9732d" stroke-width="8" stroke-dasharray="15 11"/>
+
+  <path d="M300 355 Q355 298 415 352 Q398 448 325 432 Q282 398 300 355Z" fill="#2d241f"/>
+  <path d="M600 355 Q545 298 485 352 Q502 448 575 432 Q618 398 600 355Z" fill="#2d241f"/>
+  <path d="M450 395 L410 478 Q450 512 490 478Z" fill="#2d241f" opacity="0.82"/>
+
+  <path d="M350 505 Q450 462 550 505 L530 590 H370Z" fill="#f4ead7" stroke="#3a2d23" stroke-width="9"/>
+  <path d="M385 500 V585 M417 485 V593 M450 480 V596 M483 485 V593 M515 500 V585" fill="none" stroke="#544338" stroke-width="9" stroke-linecap="round"/>
+  <path d="M278 458 Q245 535 294 604 M622 458 Q655 535 606 604" fill="none" stroke="#544338" stroke-width="13" stroke-linecap="round"/>
+  <path d="M340 314 Q450 260 560 314 M350 450 Q450 472 550 450" fill="none" stroke="#544338" stroke-width="7" stroke-linecap="round"/>
+  <path d="M382 200 Q415 242 404 288 M518 200 Q485 242 496 288" fill="none" stroke="#544338" stroke-width="6" stroke-linecap="round"/>
+
+  <text x="450" y="682" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#fffaf0">Яйцо 45 × 58 мм · отверстие 42 мм · чаша 22 мм · PLA / сопло 0,4 мм</text>
+</svg>

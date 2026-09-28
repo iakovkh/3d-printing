@@ -1,0 +1,37 @@
+name: 3D contract
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    name: contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: toolchain/requirements.lock
+      - name: Install locked Python environment
+        run: python -m pip install --disable-pip-version-check -r toolchain/requirements.lock
+      - name: Run contract tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate repository
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ -n "$BASE_SHA" ]; then
+            python -m toolchain.validate_repository --repo-root . --base-ref "$BASE_SHA"
+          else
+            python -m toolchain.validate_repository --repo-root .
+          fi

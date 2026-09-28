@@ -1,0 +1,30 @@
+{
+  "model": "skull_egg_cup",
+  "version": "v001",
+  "classification": "HYBRID",
+  "units": "millimeter",
+  "canonical_source": "../03_build/v001/skull_egg_cup_v001_source.blend",
+  "generator": "blender/build_anatomical_source.py --core-mode none",
+  "anatomical_reference": {
+    "file": "references/human_skull_cc-by-4.0.stl",
+    "author": "martinjario",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:3D-Sch%C3%A4del_eines_Menschen.stl",
+    "sha256": "d44fe197ce4724d6fdf9729701c723efb79ccf14a1ccb3ad37475fbfe1b5066d"
+  },
+  "body": {
+    "name": "skull_egg_cup_body",
+    "color_role": "single_spool_color",
+    "transform": {
+      "translation_mm": [0, 0, 0],
+      "rotation_deg": [0, 0, 0],
+      "scale": [1, 1, 1]
+    }
+  },
+  "protected_geometry": {
+    "opening_diameter_mm": 42.0,
+    "cavity_depth_mm": 22.0,
+    "minimum_wall_mm": 2.4,
+    "base_plane_z_mm": 0.0
+  }
+}
