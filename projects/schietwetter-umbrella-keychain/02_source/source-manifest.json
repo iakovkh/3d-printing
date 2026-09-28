@@ -1,19 +1,18 @@
 {
   "schema_version": 1,
   "model": "schietwetter_umbrella_keychain",
-  "version": "v001",
+  "version": "v002",
   "units": "mm",
-  "canonical_sources": [
-    "schietwetter_umbrella_keychain_v001_source.scad"
-  ],
-  "derived_build_step": "Export body/text/mark from OpenSCAD; split text STL into connected components sorted left-to-right; package unchanged meshes into 3MF.",
+  "canonical_source": "02_source/schietwetter_umbrella_keychain_v002_source.py",
   "bodies": [
-    {"name":"umbrella_body","path":"03_build/v001/schietwetter_umbrella_keychain_v001_umbrella_body.stl","color":"#173354","role":"structural blue body","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
-    {"name":"schietwetter_text_01","path":"03_build/v001/schietwetter_umbrella_keychain_v001_text_01.stl","color":"#F4E5C4","role":"cream wordmark component","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
-    {"name":"schietwetter_text_02","path":"03_build/v001/schietwetter_umbrella_keychain_v001_text_02.stl","color":"#F4E5C4","role":"cream wordmark component","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
-    {"name":"schietwetter_text_03","path":"03_build/v001/schietwetter_umbrella_keychain_v001_text_03.stl","color":"#F4E5C4","role":"cream wordmark component","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
-    {"name":"schietwetter_text_04","path":"03_build/v001/schietwetter_umbrella_keychain_v001_text_04.stl","color":"#F4E5C4","role":"cream wordmark component","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
-    {"name":"schietwetter_text_05","path":"03_build/v001/schietwetter_umbrella_keychain_v001_text_05.stl","color":"#F4E5C4","role":"cream wordmark component","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
-    {"name":"hamburg_mark","path":"03_build/v001/schietwetter_umbrella_keychain_v001_hamburg_mark.stl","color":"#C5231A","role":"red Hamburg three-tower mark","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]}
-  ]
+    {"name":"umbrella_body","path":"03_build/v002/schietwetter_umbrella_keychain_v002_umbrella_body.stl","color":"#29485F","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
+    {"name":"text_and_simple_decor","path":"03_build/v002/schietwetter_umbrella_keychain_v002_text_and_simple_decor.stl","color":"#F2E6C9","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
+    {"name":"hamburg_mark","path":"03_build/v002/schietwetter_umbrella_keychain_v002_hamburg_mark.stl","color":"#C44A3D","transform":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]}
+  ],
+  "design_notes": {
+    "canopy_width_mm": 45.0,
+    "loop_hole_mm": 4.2,
+    "flat_back": true,
+    "fine_decor_omitted": ["small seagulls","thin waves","micro-icons"]
+  }
 }
