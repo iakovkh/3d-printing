@@ -5,7 +5,7 @@
   "status": "READY_FOR_REVIEW",
   "critical_questions_open": false,
   "concept_required": true,
-  "current_version": "v002",
+  "current_version": "v003",
   "requirements_approval": {
     "user_text": "Да, сделай так, чтобы получилось красиво... я согласен отказаться от мелких деталей.",
     "recorded_at": "2026-09-28T20:01:00+00:00"
@@ -50,6 +50,18 @@
       "to": "READY_FOR_REVIEW",
       "evidence": "v002 candidate reopened independently; watertight/single-component QA passed with no BLOCKER; candidate ID 88216554; proof views generated only from reopened candidate geometry.",
       "recorded_at": "2026-09-28T21:31:00+00:00"
+    },
+    {
+      "from": "READY_FOR_REVIEW",
+      "to": "GEOMETRY_DRAFT",
+      "evidence": "User rejected v002 as too flat and explicitly required a true 3D umbrella. v002 remains immutable; started v003 with rounded back, round shaft/handle and no flat backplate.",
+      "recorded_at": "2026-09-28T21:45:00+00:00"
+    },
+    {
+      "from": "GEOMETRY_DRAFT",
+      "to": "READY_FOR_REVIEW",
+      "evidence": "v003 candidate reopened independently; full 3D depth 12.347 mm; all 14 bodies watertight, single-component and winding-consistent; no BLOCKER; candidate ID 0A39D26B; proof views generated only from reopened candidate geometry.",
+      "recorded_at": "2026-09-28T22:07:00+00:00"
     }
   ]
 }
