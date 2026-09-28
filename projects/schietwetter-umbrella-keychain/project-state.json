@@ -2,7 +2,7 @@
   "schema_version": 1,
   "slug": "schietwetter-umbrella-keychain",
   "classification": "HYBRID",
-  "status": "GEOMETRY_DRAFT",
+  "status": "READY_FOR_REVIEW",
   "critical_questions_open": false,
   "concept_required": true,
   "current_version": "v001",
@@ -32,6 +32,12 @@
       "to": "GEOMETRY_DRAFT",
       "evidence": "Requirements and concept approved; start v001 canonical geometry.",
       "recorded_at": "2026-09-28T20:05:00+00:00"
+    },
+    {
+      "from": "GEOMETRY_DRAFT",
+      "to": "READY_FOR_REVIEW",
+      "evidence": "v001 candidate 3MF reopened independently; geometric QA completed with no BLOCKER; candidate ID 62091427; technical proof views rendered only from reopened candidate geometry.",
+      "recorded_at": "2026-09-28T20:30:00+00:00"
     }
   ]
 }
